@@ -23,28 +23,7 @@ node {
         }
     }
 
-    stage("Parallel Builds ") {
-            steps {
-                  parallel (
-                  "Development Build" : {
-                    //do some stuff
-                    echo 'Executing Maven Goals.'
-                 //   sh 'mvn -f maven-example/pom.xml install'
-                
-            },
-                   "Release Build" : {
-                    // Do some other stuff in parallel
-                    echo 'Executing Maven Goals.'
-                  //  sh 'mvn -f maven-example/pom.xml install'
-            },
-            
-                   "Production Master Build" : {
-                    // Do some other stuff in parallel
-                    echo 'Executing Maven Goals.'
-                   //sh 'mvn -f maven-example/pom.xml install'
-            }
-        )
-    }
+  
 }
 
     stage('Push image') {
